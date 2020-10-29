@@ -5,3 +5,13 @@ A simple java-based tool that could generate the PDF bookmarks from the link in 
 ### Execution
 #### Run
 `$ java -jar auto-pdf-mark.jar [input.pdf] [output.pdf]`
+
+### Other PDF Mark Method
+Use Nitro, See https://www.gonitro.com/user-guide/pro/article/create-bookmarks-automatically. Set level1 mask:
+`^[1-9][.] `
+level2 mask:
+`^[1-9][.][1-9] `
+level3 to level5
+
+### Optimize
+Use PDFPatcher to edit chapter bookmark menu level.

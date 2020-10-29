@@ -5,7 +5,6 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
 import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotationLink;
-import org.apache.pdfbox.pdmodel.interactive.documentnavigation.destination.PDNamedDestination;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDDocumentOutline;
 import org.apache.pdfbox.pdmodel.interactive.documentnavigation.outline.PDOutlineItem;
 import org.apache.pdfbox.text.PDFTextStripperByArea;
@@ -119,9 +118,8 @@ public class GeneratePdfMark {
 
                 /** try to access the destination of the link and create bookmark */
                 try {
-                    PDNamedDestination destination = (PDNamedDestination) link.getDestination();
                     PDOutlineItem bookmark = new PDOutlineItem();
-                    bookmark.setDestination(destination);
+                    bookmark.setDestination(link.getDestination());
                     bookmark.setTitle(text);
                     outline.addLast(bookmark);
                     marks.add(text);
